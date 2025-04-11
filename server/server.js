@@ -1,13 +1,13 @@
 const express = require('express');
 const cors = require("cors");
-// const connectDB = require('./config/db');
+require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 const gameRoutes = require('./routes/gameRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const mongoose = require('mongoose');
+const path = require('path');
 
 require('dotenv').config();
-// connectDB();
 
 const app = express();
 // app.use(cors());
@@ -20,7 +20,8 @@ mongoose
 app.use(
   cors({
     // origin: "https://crossword-game-sicasa.vercel.app",
-    origin: "http://localhost:5000",
+    // origin: "http://localhost:5000",
+    origin: "*",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
@@ -33,12 +34,17 @@ app.use(
 );
 
 app.use(express.json());
+const _dirname = path.dirname("");
+const buildpath = path.join(_dirname, "../client/dist");
+app.use(express.static(buildpath));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/game', gameRoutes);
 app.use('/api/admin', adminRoutes);
 
 const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+});
 
 module.exports = app;

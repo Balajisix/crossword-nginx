@@ -16,8 +16,8 @@ import {
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// const BASE_URL = "http://localhost:5000;
-const BASE_URL = "https://crossword-game-ca-backend.vercel.app";
+const BASE_URL = "http://localhost:5000";
+// const BASE_URL = "https://crossword-game-ca-backend.vercel.app";
 
 // Interfaces for data types
 interface Question {
