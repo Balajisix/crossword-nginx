@@ -12,7 +12,7 @@ const app = express();
 // app.use(cors());
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect("mongodb+srv://brainbric:balaji@cluster0.7x8pu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => console.log("MongoDB connected"))
   .catch((error) => console.log(error));
 
