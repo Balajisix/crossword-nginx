@@ -1,0 +1,48 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+.next/
+out/
+public/
+
+# Database files
+*.sqlite
+*.sqlite3
+dump.rdb
+*.mongo
+
+# Editor and system files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Backend (Express/MongoDB)
+coverage/
+server/dist/
+
+# Frontend (React)
+node_modules/
+coverage/
