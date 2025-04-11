@@ -13,7 +13,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://crossword-game-sicasa.vercel.app",
+    // origin: "https://crossword-game-sicasa.vercel.app",
+    origin: "http://localhost:5000",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
@@ -31,7 +32,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/game', gameRoutes);
 app.use('/api/admin', adminRoutes);
 
-module.exports = app;
+// module.exports = app;
 
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
